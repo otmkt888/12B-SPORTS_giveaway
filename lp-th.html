@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0A0A0A">
+<meta name="description" content="12B Sports × VR46 Official Giveaway — ลุ้นรับสินค้า VR46 Racing Team อย่างเป็นทางการ รวม 21 รางวัล">
+<title>12B Sports × VR46 Official Giveaway | ประเทศไทย</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,900;1,900&family=Noto+Sans+Thai:wght@400;600;700;900&display=swap" rel="stylesheet">
+<style>
+/* ─── TOKENS ─────────────────────────────────────── */
+:root {
+  --black:    #0A0A0A;
+  --black2:   #141414;
+  --black3:   #1e1e1e;
+  --yellow:   #C8FF00;
+  --yellow2:  #B0E600;
+  --yellow3:  #E6FF66;
+  --red:      #D41515;
+  --red2:     #B01010;
+  --white:    #FFFFFF;
+  --off:      #F6F6F6;
+  --light:    #EEEEEE;
+  --midgray:  #AAAAAA;
+  --darkgray: #555555;
+  --border-l: #E0E0E0;
+  --border-d: #2a2a2a;
+  --r:        10px;
+  --rlg:      16px;
+}
+
+/* ─── RESET ─────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--white);color:var(--black);font-family:'Noto Sans Thai',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;font-family:inherit;border:none;background:none}
+
+/* ─── HEADER ─────────────────────────────────────── */
+.hdr{
+  position:sticky;top:0;z-index:200;
+  background:rgba(10,10,10,.96);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:2px solid var(--yellow);
+  padding:12px 20px;
+  display:flex;align-items:center;justify-content:center;gap:14px;
+}
+.logo-block{display:flex;flex-direction:column;align-items:center;line-height:1;gap:2px}
+.l12-num{font-family:'Barlow Condensed',sans-serif;font-size:26px;font-weight:900;color:var(--white);letter-spacing:-1px}
+.l12-word{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:900;color:var(--red);letter-spacing:3px}
+.lsep{font-size:20px;color:rgba(255,255,255,.35);font-weight:200;line-height:1;margin-bottom:2px}
+.lvr-name{font-family:'Barlow Condensed',sans-serif;font-size:22px;font-weight:900;color:var(--yellow);letter-spacing:1px}
+.lvr-sub{font-family:'Barlow Condensed',sans-serif;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--midgray)}
+.hdr-divider{width:1px;height:32px;background:var(--border-d)}
+
+/* ─── HERO ───────────────────────────────────────── */
+.hero{
+  position:relative;background:var(--black);
+  min-height:100svh;min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:56px 20px 52px;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;inset:-60%;z-index:0;pointer-events:none;
+  background:repeating-linear-gradient(-15deg,transparent 0,transparent 28px,rgba(200,255,0,.03) 28px,rgba(200,255,0,.03) 29px);
+}
+.hero-glow{
+  position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 100% 60% at 50% -10%, rgba(200,255,0,.14) 0%, transparent 65%),
+    radial-gradient(ellipse 70% 40% at 50% 110%, rgba(212,21,21,.08) 0%, transparent 60%);
+}
+.hero-watermark{
+  position:absolute;right:-10px;bottom:-20px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:clamp(180px,50vw,320px);
+  font-weight:900;font-style:italic;
+  color:rgba(200,255,0,.04);line-height:1;
+  pointer-events:none;z-index:0;user-select:none;letter-spacing:-10px;
+}
+.hero-accent{position:absolute;bottom:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--red),var(--yellow) 50%,var(--red));z-index:2}
+.hero-inner{position:relative;z-index:1;max-width:500px;width:100%}
+.hero-video{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:contain;z-index:0;
+  opacity:.8;
+  mix-blend-mode:screen;
+  pointer-events:none;
+  -webkit-mask-image:linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+  mask-image:linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+}
+
+.sponsor-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(200,255,0,.12);border:1px solid rgba(200,255,0,.3);
+  color:var(--yellow);
+  font-size:11px;font-weight:700;
+  padding:7px 16px;border-radius:100px;margin-bottom:22px;
+}
+.sponsor-tag .dot{width:6px;height:6px;border-radius:50%;background:var(--yellow);animation:blink 1.5s ease-in-out infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+.hero-lockup{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:18px}
+.hdr-logo-12b{height:38px;width:auto;object-fit:contain}
+.logo-12b-img{height:clamp(54px,13vw,86px);width:auto;object-fit:contain}
+.lockup-12b{display:flex;flex-direction:column;align-items:flex-start;line-height:1}
+.lockup-12b-num{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.4rem,10vw,4rem);font-weight:900;color:var(--white);letter-spacing:-2px;line-height:.9}
+.lockup-12b-word{font-family:'Barlow Condensed',sans-serif;font-size:clamp(1rem,4.2vw,1.5rem);font-weight:900;color:var(--red);letter-spacing:3px}
+.lockup-x{font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.6rem,6vw,2.5rem);font-weight:900;color:rgba(255,255,255,.3);align-self:center}
+.lockup-vr46{display:flex;flex-direction:column;align-items:flex-start;line-height:1}
+.lockup-vr46-name{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.4rem,10vw,4rem);font-weight:900;font-style:italic;color:var(--yellow);letter-spacing:-2px;line-height:.9}
+.lockup-vr46-sub{font-family:'Barlow Condensed',sans-serif;font-size:clamp(.8rem,3vw,1rem);font-weight:700;letter-spacing:2px;color:rgba(200,255,0,.6);text-transform:uppercase}
+
+.hero-headline{font-size:clamp(1.2rem,5.5vw,1.9rem);font-weight:900;color:var(--white);margin-bottom:6px}
+.hero-headline span{color:var(--yellow)}
+.hero-sub-tag{font-family:'Barlow Condensed',sans-serif;font-size:clamp(.85rem,3.5vw,1rem);font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.9);margin-bottom:28px;background:rgba(0,0,0,.6);padding:5px 16px;border-radius:100px;display:inline-block}
+.hero-sub-tag strong{color:var(--yellow)}
+
+.cdw{display:flex;gap:8px;justify-content:center;margin-bottom:30px}
+.cd-box{position:relative;background:rgba(255,255,255,.07);border:1px solid rgba(200,255,0,.2);border-radius:8px;padding:12px 10px 9px;min-width:62px;text-align:center;overflow:hidden}
+.cd-box::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--yellow)}
+.cd-num{display:block;font-family:'Barlow Condensed',monospace;font-size:2.1rem;font-weight:900;color:var(--yellow);line-height:1;letter-spacing:-1px;font-variant-numeric:tabular-nums}
+.cd-lbl{display:block;font-size:10px;font-weight:700;color:rgba(255,255,255,.4);margin-top:4px}
+.cd-tbd{font-size:.95rem;font-weight:700;color:rgba(255,255,255,.9);padding:6px 18px;border-radius:100px;background:rgba(0,0,0,.6);margin-bottom:22px;display:none}
+
+.hero-ctas{display:flex;flex-direction:column;gap:10px;width:100%;max-width:360px;margin:0 auto 18px}
+.btn-yellow{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--yellow);color:var(--black);
+  font-family:'Noto Sans Thai',sans-serif;font-size:1.05rem;font-weight:900;
+  padding:19px 24px;border-radius:var(--r);width:100%;
+  transition:transform .15s,box-shadow .2s,background .15s;
+}
+.btn-yellow:hover{background:var(--yellow3);transform:translateY(-2px);box-shadow:0 10px 32px rgba(200,255,0,.35)}
+.btn-yellow:active{transform:translateY(0)}
+.btn-outline-w{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  background:transparent;color:var(--white);
+  border:1.5px solid rgba(255,255,255,.25);
+  font-size:.95rem;font-weight:700;
+  padding:16px 24px;border-radius:var(--r);width:100%;
+  transition:border-color .15s,background .15s;
+}
+.btn-outline-w:hover{border-color:rgba(200,255,0,.5);color:var(--yellow)}
+
+.date-row{font-size:13px;color:rgba(255,255,255,.4);display:flex;align-items:center;justify-content:center;gap:8px}
+.date-pill{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);color:var(--white);padding:5px 14px;border-radius:100px;font-size:12px;font-weight:600}
+
+/* ─── PRIZE STRIP ─────────────────────────────────── */
+.prize-strip{background:var(--yellow);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.prize-strip::-webkit-scrollbar{display:none}
+.prize-strip-inner{display:flex;min-width:max-content;padding:0 16px}
+.ps-item{display:flex;align-items:center;gap:10px;padding:14px 18px;border-right:1px solid rgba(0,0,0,.12);flex-shrink:0}
+.ps-item:last-child{border-right:none}
+.ps-count{font-family:'Barlow Condensed',sans-serif;font-size:2.2rem;font-weight:900;line-height:1;color:var(--black)}
+.ps-labels{display:flex;flex-direction:column;gap:0}
+.ps-tier{font-family:'Barlow Condensed',sans-serif;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(0,0,0,.45)}
+.ps-name{font-size:.9rem;font-weight:900;color:var(--black)}
+.ps-item.rank2{opacity:.85}.ps-item.rank3{opacity:.7}.ps-item.rank4{opacity:.55}
+
+/* ─── STRIPE ─────────────────────────────────────── */
+.stripe{height:4px;background:linear-gradient(90deg,var(--red),var(--yellow) 50%,var(--red))}
+
+/* ─── SECTIONS ───────────────────────────────────── */
+.section{padding:56px 20px}
+.sec-white{background:var(--white)}
+.sec-off{background:var(--off)}
+
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:900;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px}
+.eyebrow::before{content:'';width:18px;height:2px;flex-shrink:0}
+.eyebrow-dark{color:var(--black)}.eyebrow-dark::before{background:var(--red)}
+.eyebrow-light{color:var(--yellow)}.eyebrow-light::before{background:var(--yellow)}
+
+.sec-heading{font-family:'Noto Sans Thai',sans-serif;font-size:clamp(1.8rem,8vw,3rem);font-weight:900;line-height:1.15;margin-bottom:10px}
+.sec-heading .y{color:var(--yellow)}.sec-heading .r{color:var(--red)}
+.sec-desc{font-size:14px;line-height:1.8;margin-bottom:36px}
+.on-white .sec-desc,.sec-desc.on-white-t{color:var(--darkgray)}
+
+/* ─── PRIZES GRID ────────────────────────────────── */
+.pz-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pz-card{
+  position:relative;background:var(--white);
+  border:1.5px solid var(--border-l);border-radius:var(--rlg);
+  overflow:hidden;transition:border-color .2s,box-shadow .2s,transform .2s;
+  box-shadow:0 2px 12px rgba(0,0,0,.05);
+}
+.pz-card:hover{border-color:var(--yellow);box-shadow:0 6px 24px rgba(200,255,0,.15);transform:translateY(-3px)}
+.pz-card:active{transform:scale(.98)}
+.pz-card.grand{grid-column:1/-1;border-color:rgba(200,255,0,.4);box-shadow:0 4px 20px rgba(200,255,0,.12)}
+.pz-card.rank-1::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--yellow);z-index:2}
+.pz-card.rank-2::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--midgray);z-index:2}
+.pz-card.rank-3::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:#CD7F32;z-index:2}
+.pz-card.rank-4::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--border-l);z-index:2}
+.pz-badge{position:absolute;top:12px;left:12px;z-index:3;font-size:11px;font-weight:700;padding:4px 10px;border-radius:6px;line-height:1.3}
+.rank-1 .pz-badge{background:var(--yellow);color:var(--black)}
+.rank-2 .pz-badge{background:var(--black);color:var(--white)}
+.rank-3 .pz-badge{background:var(--black);color:var(--white)}
+.rank-4 .pz-badge{background:var(--off);color:var(--darkgray);border:1px solid var(--border-l)}
+.pz-qty{position:absolute;top:12px;right:12px;z-index:3;background:var(--black);font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:900;color:var(--yellow);letter-spacing:.5px;padding:4px 10px;border-radius:6px}
+.pz-img{background:#F0F2F0;aspect-ratio:1/1;overflow:hidden}
+.pz-card.grand .pz-img{aspect-ratio:4/3}
+.pz-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.pz-card.rank-4 .pz-img{background:#fff;padding:16px}
+.pz-card.rank-4 .pz-img img{object-fit:contain}
+.pz-card:hover .pz-img img{transform:scale(1.04)}
+.pz-body{padding:14px 14px 16px;border-top:1px solid var(--border-l);background:var(--white)}
+.pz-rank-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:900;letter-spacing:2px;text-transform:uppercase;color:var(--midgray);margin-bottom:4px}
+.pz-name{font-size:13px;font-weight:700;line-height:1.35;color:var(--black);margin-bottom:3px}
+.pz-card.grand .pz-name{font-size:15px}
+.pz-sub{font-size:11px;color:var(--midgray)}
+
+/* ─── STEPS ──────────────────────────────────────── */
+.steps-section{background:var(--off)}
+.steps{display:flex;flex-direction:column;gap:28px}
+.step-wrap{display:flex;gap:16px}
+.step-icon{flex-shrink:0;width:48px;height:48px;border-radius:50%;border:2px solid var(--yellow);background:rgba(200,255,0,.1);display:flex;align-items:center;justify-content:center}
+.step-num-tag{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:900;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:4px}
+.step-title{font-size:15px;font-weight:700;color:var(--black);margin-bottom:6px}
+.step-desc{font-size:14px;color:var(--darkgray);line-height:1.7}
+.comment-tmpl{margin-top:12px;background:var(--white);border:1.5px solid var(--border-l);border-radius:8px;padding:14px}
+.tmpl-label{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--midgray);margin-bottom:8px}
+.tmpl-text{font-size:13px;color:var(--black);line-height:1.65;font-weight:500}
+.tmpl-text .ht{color:var(--red);font-weight:700}
+.tmpl-text .at{color:var(--black);font-weight:700}
+.copy-btn{display:inline-flex;align-items:center;gap:5px;margin-top:10px;padding:7px 14px;background:var(--off);border:1.5px solid var(--border-l);border-radius:6px;font-size:11px;font-weight:700;color:var(--darkgray);transition:color .15s,border-color .15s,background .15s}
+.copy-btn:hover{border-color:var(--yellow);background:rgba(200,255,0,.08);color:var(--black)}
+.copy-btn.copied{border-color:var(--yellow);background:rgba(200,255,0,.12);color:var(--black)}
+.ig-link-btn{display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:10px 16px;background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);color:var(--white);border-radius:8px;font-size:13px;font-weight:700;transition:opacity .15s}
+.ig-link-btn:hover{opacity:.85}
+
+/* ─── FORM ───────────────────────────────────────── */
+.form-section{background:var(--white)}
+.form-card{background:var(--white);border:1.5px solid var(--border-l);border-radius:var(--rlg);padding:28px 20px 24px;box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.fg{margin-bottom:18px}
+.flbl{display:block;font-size:13px;font-weight:700;margin-bottom:8px;color:var(--black)}
+.finput,.fselect{display:block;width:100%;background:var(--off);border:1.5px solid var(--border-l);border-radius:8px;color:var(--black);font-family:'Noto Sans Thai',sans-serif;font-size:16px;padding:14px 16px;outline:none;-webkit-appearance:none;transition:border-color .15s,background .15s}
+.finput::placeholder{color:var(--midgray)}
+.fselect{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M4 6l4 4 4-4' stroke='%23999' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:42px;cursor:pointer;background-color:var(--off)}
+.finput:focus,.fselect:focus{border-color:var(--yellow);background:var(--white)}
+.finput.err,.fselect.err{border-color:var(--red)}
+.ig-wrap{position:relative;display:flex;align-items:center}
+.ig-prefix{position:absolute;left:14px;font-size:16px;font-weight:600;color:var(--midgray);pointer-events:none;user-select:none}
+.ig-wrap .finput{padding-left:30px}
+.fhint{margin-top:6px;font-size:12px;color:var(--midgray);line-height:1.6}
+.consent-wrap{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--off);border:1.5px solid var(--border-l);border-radius:8px;margin-bottom:20px;cursor:pointer;transition:border-color .15s,background .15s}
+.consent-wrap:has(input:checked){border-color:rgba(200,255,0,.5);background:rgba(200,255,0,.06)}
+.consent-wrap.err{border-color:var(--red)}
+.consent-chk{flex-shrink:0;width:20px;height:20px;border-radius:4px;border:2px solid var(--border-l);background:var(--white);appearance:none;-webkit-appearance:none;cursor:pointer;transition:background .15s,border-color .15s;position:relative;margin-top:2px}
+.consent-chk:checked{background:var(--yellow);border-color:var(--yellow)}
+.consent-chk:checked::after{content:'';position:absolute;top:2px;left:5px;width:6px;height:10px;border:2px solid var(--black);border-top:none;border-left:none;transform:rotate(45deg)}
+.consent-text{font-size:13px;color:var(--darkgray);line-height:1.7}
+.consent-text em{font-style:normal;color:var(--black);font-weight:700}
+.fsubmit{width:100%;background:var(--yellow);color:var(--black);font-family:'Noto Sans Thai',sans-serif;font-size:1.05rem;font-weight:900;padding:20px;border-radius:var(--r);transition:transform .15s,box-shadow .2s,background .15s}
+.fsubmit:hover{background:var(--yellow3);transform:translateY(-2px);box-shadow:0 8px 28px rgba(200,255,0,.3)}
+.fsubmit:disabled{background:var(--light);color:var(--midgray);transform:none;box-shadow:none;cursor:default}
+.form-success{display:none;text-align:center;padding:44px 0 20px}
+.suc-icon{font-size:3.5rem;margin-bottom:18px}
+.suc-title{font-size:1.9rem;font-weight:900;color:var(--black);margin-bottom:12px}
+.suc-title span{color:var(--red)}
+.suc-desc{font-size:14px;color:var(--darkgray);line-height:1.7}
+
+/* ─── TERMS ──────────────────────────────────────── */
+.terms-wrap{border-top:1px solid var(--border-l);padding-top:48px;background:var(--white)}
+.terms-btn{width:100%;background:none;border:1.5px solid var(--border-l);color:var(--black);padding:16px 18px;border-radius:var(--r);display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:700;transition:border-color .15s}
+.terms-btn:hover{border-color:var(--yellow)}
+.terms-arrow{color:var(--midgray);transition:transform .25s;flex-shrink:0}
+.terms-btn[aria-expanded="true"] .terms-arrow{transform:rotate(180deg)}
+.terms-panel{display:none;border:1.5px solid var(--border-l);border-top:none;border-radius:0 0 var(--r) var(--r);padding:20px 18px;font-size:13px;color:var(--darkgray);line-height:1.9;background:var(--off)}
+.terms-panel ol{padding-left:18px}
+.terms-panel li{margin-bottom:10px}
+
+/* ─── FOOTER ─────────────────────────────────────── */
+footer{background:var(--black);border-top:3px solid var(--yellow);padding:32px 20px 40px;text-align:center}
+.ft-logos{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:20px}
+.ft-tagline{font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-style:italic;font-weight:700;letter-spacing:2px;color:rgba(200,255,0,.5);text-transform:uppercase;margin-bottom:16px}
+.ft-copy{font-size:12px;color:rgba(255,255,255,.4);line-height:1.9}
+.ft-copy strong{color:rgba(255,255,255,.7);font-weight:600}
+
+/* ─── REVEAL / PULSE ─────────────────────────────── */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.21s}.d4{transition-delay:.28s}
+@keyframes cdPulse{0%,100%{box-shadow:0 0 0 0 rgba(200,255,0,0)}50%{box-shadow:0 0 0 8px rgba(200,255,0,.08)}}
+.cd-pulse{animation:cdPulse 2.5s ease-in-out infinite}
+
+/* ─── RESPONSIVE ─────────────────────────────────── */
+@media(min-width:420px){.pz-grid{gap:14px}}
+@media(min-width:540px){.pz-grid{grid-template-columns:repeat(3,1fr)}.pz-card.grand{grid-column:1/-1}.pz-card.grand .pz-img{aspect-ratio:16/9}}
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="hdr">
+  <img src="12B_Sports_logo.png" class="hdr-logo-12b" alt="12B Sports">
+  <div class="hdr-divider"></div>
+  <span class="lsep">×</span>
+  <div class="hdr-divider"></div>
+  <div class="logo-block">
+    <span class="lvr-name">VR46</span>
+    <span class="lvr-sub">Racing Team</span>
+  </div>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <video class="hero-video" src="new visual.mp4" autoplay muted loop playsinline preload="auto"></video>
+  <div class="hero-glow"></div>
+  <div class="hero-watermark">46</div>
+  <div class="hero-accent"></div>
+
+  <div class="hero-inner">
+
+    <div class="sponsor-tag">
+      <span class="dot"></span>
+      MAIN SPONSOR · OFFICIAL GIVEAWAY
+    </div>
+
+    <div class="hero-lockup">
+      <img src="12B_Sports_logo.png" class="logo-12b-img" alt="12B Sports">
+      <span class="lockup-x">×</span>
+      <div class="lockup-vr46">
+        <span class="lockup-vr46-name">VR46</span>
+        <span class="lockup-vr46-sub">Racing Team</span>
+      </div>
+    </div>
+
+    <h1 class="hero-headline">กิจกรรม<span>ลุ้นโชค</span>อย่างเป็นทางการ</h1>
+    <p class="hero-sub-tag">ของรางวัลพิเศษ · <strong>21 รางวัล</strong> · ประเทศไทย</p>
+
+    <div class="cdw cd-pulse" id="cdw">
+      <div class="cd-box"><span class="cd-num" id="cd-d">--</span><span class="cd-lbl">วัน</span></div>
+      <div class="cd-box"><span class="cd-num" id="cd-h">--</span><span class="cd-lbl">ชม.</span></div>
+      <div class="cd-box"><span class="cd-num" id="cd-m">--</span><span class="cd-lbl">นาที</span></div>
+      <div class="cd-box"><span class="cd-num" id="cd-s">--</span><span class="cd-lbl">วิ</span></div>
+    </div>
+    <p class="cd-tbd" id="cd-tbd">จะประกาศวันเร็วๆ นี้</p>
+
+    <div class="hero-ctas">
+      <a href="#entry-form" class="btn-yellow">
+        ร่วมลุ้นโชคเลย
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.75 9H14.25M10.5 5.25L14.25 9L10.5 12.75" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://instagram.com/12bsports" target="_blank" rel="noopener" class="btn-outline-w" id="go-to-post">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+        ไปที่โพสต์ ↗
+      </a>
+    </div>
+
+    <p class="date-row">
+      <span>ระยะเวลา:</span>
+      <span class="date-pill">[DATE] — [DATE]</span>
+    </p>
+
+  </div>
+</section>
+
+<!-- ═══ PRIZE STRIP ═══ -->
+<div class="prize-strip">
+  <div class="prize-strip-inner">
+    <div class="ps-item rank1"><span class="ps-count">2</span><div class="ps-labels"><span class="ps-tier">Grand Prize</span><span class="ps-name">เสื้อสเวต</span></div></div>
+    <div class="ps-item rank2"><span class="ps-count">7</span><div class="ps-labels"><span class="ps-tier">2nd Prize</span><span class="ps-name">เสื้อยืด</span></div></div>
+    <div class="ps-item rank3"><span class="ps-count">7</span><div class="ps-labels"><span class="ps-tier">3rd Prize</span><span class="ps-name">หมวก</span></div></div>
+    <div class="ps-item rank4"><span class="ps-count">5</span><div class="ps-labels"><span class="ps-tier">Consolation</span><span class="ps-name">พวงกุญแจ</span></div></div>
+  </div>
+</div>
+
+<div class="stripe"></div>
+
+<!-- ═══ PRIZES ═══ -->
+<section class="section sec-white" id="prizes">
+  <p class="eyebrow eyebrow-dark reveal">รางวัล</p>
+  <h2 class="sec-heading reveal d1">รางวัล<span class="r">VR46</span>ที่รอคุณ</h2>
+  <p class="sec-desc sec-desc on-white-t reveal d2">รวม 21 รางวัล สำหรับผู้โชคดีในประเทศไทย สินค้า VR46 Racing Team อย่างเป็นทางการ</p>
+
+  <div class="pz-grid">
+    <div class="pz-card grand rank-1 reveal d1">
+      <div class="pz-badge">🥇 รางวัลที่ 1</div>
+      <div class="pz-qty">×2</div>
+      <div class="pz-img">
+        <img src="https://vr46.com/cdn/shop/files/LTMFL542004_004_1_67848e13-1d21-4517-9373-b47d4a4f9146.jpg?v=1740078093"
+             alt="VR46 Travel Sweatshirt 2025" loading="lazy" width="800" height="600"
+             onerror="this.src='https://vr46.com/cdn/shop/files/LTMFL542004_004_2_f5d2aa22-ffca-4d2c-8796-67dfde3ac286.jpg?v=1740078094'">
+      </div>
+      <div class="pz-body">
+        <div class="pz-rank-label">Grand Prize — 2 ท่าน</div>
+        <div class="pz-name">เสื้อสเวตเชิ้ต VR46 Pertamina Enduro Travel 2025</div>
+        <div class="pz-sub">Pertamina Enduro VR46 Racing Team</div>
+      </div>
+    </div>
+    <div class="pz-card rank-2 reveal d2">
+      <div class="pz-badge">🥈 รางวัลที่ 2</div>
+      <div class="pz-qty">×7</div>
+      <div class="pz-img">
+        <img src="https://vr46.com/cdn/shop/files/LTMTS541904_004_1_26464eb7-158a-4186-add8-c5c166d4c676.jpg?v=1740078103"
+             alt="VR46 Travel T-Shirt 2025" loading="lazy" width="600" height="800"
+             onerror="this.src='https://vr46.com/cdn/shop/files/LTMTS541904_004_2_6a7937f3-e41a-44a9-9ff3-8d7d33ef47df.jpg?v=1740078103'">
+      </div>
+      <div class="pz-body">
+        <div class="pz-rank-label">2nd Prize — 7 ท่าน</div>
+        <div class="pz-name">เสื้อยืด VR46 Pertamina Enduro Travel 2025</div>
+        <div class="pz-sub">Racing Team Collection</div>
+      </div>
+    </div>
+    <div class="pz-card rank-3 reveal d3">
+      <div class="pz-badge">🥉 รางวัลที่ 3</div>
+      <div class="pz-qty">×7</div>
+      <div class="pz-img">
+        <img src="https://vr46.com/cdn/shop/files/VTMCA573503_003_1_2a33c9b4-cf35-4aca-ad94-a69c6aecc0ea.jpg?v=1776175273"
+             alt="New Era Sponsors Cap VR46 Racing Team" loading="lazy" width="600" height="600"
+             onerror="this.src='https://vr46.com/cdn/shop/files/VTMCA573503_003_2.jpg?v=1776175273'">
+      </div>
+      <div class="pz-body">
+        <div class="pz-rank-label">3rd Prize — 7 ท่าน</div>
+        <div class="pz-name">หมวก New Era VR46 Racing Team</div>
+        <div class="pz-sub">Official Merchandise</div>
+      </div>
+    </div>
+    <div class="pz-card rank-4 reveal d4">
+      <div class="pz-badge">รางวัลปลอบใจ</div>
+      <div class="pz-qty">×5</div>
+      <div class="pz-img">
+        <img src="https://vr46.com/cdn/shop/files/VTUKH513603_003_1.jpg?v=1713870074"
+             alt="VR46 Racing Team Key Holder" loading="lazy" width="600" height="600"
+             onerror="this.src='https://vr46.com/cdn/shop/files/VTUKH513403_003_1.jpg?v=1716476456'">
+      </div>
+      <div class="pz-body">
+        <div class="pz-rank-label">Consolation — 5 ท่าน</div>
+        <div class="pz-name">พวงกุญแจ VR46 Racing Team</div>
+        <div class="pz-sub">Limited Edition</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<!-- ═══ HOW TO ENTER ═══ -->
+<section class="section steps-section" id="how-to-enter">
+  <p class="eyebrow eyebrow-dark reveal">วิธีร่วมกิจกรรม</p>
+  <h2 class="sec-heading reveal d1">3 ขั้นตอน<span class="r">ง่ายๆ</span></h2>
+  <p class="sec-desc on-white-t reveal d2">ต้องทำครบทั้ง 3 ขั้นตอนเพื่อให้การลงทะเบียนสมบูรณ์ เปิดรับผู้อาศัยในไทยอายุ 18 ปีขึ้นไป</p>
+
+  <div class="steps">
+    <div class="step-wrap reveal d1">
+      <div class="step-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C8FF00" stroke-width="1.75"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="#C8FF00" stroke="none"/></svg>
+      </div>
+      <div class="step-body">
+        <p class="step-num-tag">Step 01</p>
+        <p class="step-title">ติดตาม @12BSports บน Instagram</p>
+        <p class="step-desc">ติดตามบัญชีอย่างเป็นทางการ <strong>@12BSports</strong> และตั้งบัญชีเป็น <strong>สาธารณะ (Public)</strong></p>
+        <a href="https://instagram.com/12bsports" target="_blank" rel="noopener" class="ig-link-btn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          ติดตาม @12BSports
+        </a>
+      </div>
+    </div>
+
+    <div class="step-wrap reveal d2">
+      <div class="step-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C8FF00" stroke-width="1.75"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <div class="step-body">
+        <p class="step-num-tag">Step 02</p>
+        <p class="step-title">คอมเมนต์และแท็กเพื่อน</p>
+        <p class="step-desc">ไปที่โพสต์กิจกรรมของ 12B Sports แล้วคอมเมนต์ <strong>แท็กเพื่อนอย่างน้อย 1 คน</strong> พร้อม <strong>#12BSports</strong></p>
+        <div class="comment-tmpl">
+          <p class="tmpl-label">ตัวอย่างคอมเมนต์</p>
+          <p class="tmpl-text">
+            "มาร่วมลุ้นของรางวัล <span class="at">@12BSports</span> × VR46 กันเลย! 🏁 [แท็กเพื่อน] <span class="ht">#12BSports</span>"
+          </p>
+          <button class="copy-btn" id="copy-btn" type="button">
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M3 11H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v1"/></svg>
+            <span id="copy-label">คัดลอก</span>
+          </button>
+        </div>
+        <a href="https://instagram.com/12bsports" target="_blank" rel="noopener" class="ig-link-btn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+          ไปที่โพสต์ ↗
+        </a>
+      </div>
+    </div>
+
+    <div class="step-wrap reveal d3">
+      <div class="step-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C8FF00" stroke-width="1.75"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>
+      </div>
+      <div class="step-body">
+        <p class="step-num-tag">Step 03</p>
+        <p class="step-title">กรอกแบบฟอร์มลงทะเบียน</p>
+        <p class="step-desc">กรอกข้อมูลในแบบฟอร์มด้านล่างให้ครบ ลงทะเบียนได้ครั้งเดียวเท่านั้น รายการซ้ำจะถูกลบโดยอัตโนมัติ</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<!-- ═══ ENTRY FORM ═══ -->
+<section class="section form-section" id="entry-form">
+  <p class="eyebrow eyebrow-dark reveal">แบบฟอร์มร่วมกิจกรรม</p>
+  <h2 class="sec-heading reveal d1">ร่วม<span class="r">ลุ้นโชค</span></h2>
+  <p class="sec-desc on-white-t reveal d2">ผลรางวัลจะประกาศทาง Instagram <strong>@12BSports</strong> หลังสิ้นสุดกิจกรรม</p>
+
+  <div class="form-card reveal d3">
+    <form id="the-form" novalidate>
+      <input type="hidden" name="country" value="TH">
+      <div class="fg">
+        <label class="flbl" for="f-email">อีเมล *</label>
+        <input class="finput" type="email" id="f-email" name="email" autocomplete="email" placeholder="your@email.com" required>
+      </div>
+      <div class="fg">
+        <label class="flbl" for="f-name">ชื่อ-นามสกุล *</label>
+        <input class="finput" type="text" id="f-name" name="name" autocomplete="name" placeholder="ชื่อ-นามสกุลของคุณ" required>
+      </div>
+      <div class="fg">
+        <label class="flbl" for="f-ig">ชื่อผู้ใช้ Instagram *</label>
+        <div class="ig-wrap">
+          <span class="ig-prefix">@</span>
+          <input class="finput" type="text" id="f-ig" name="instagram" autocomplete="off" placeholder="yourhandle" required>
+        </div>
+        <p class="fhint">ต้องตรงกับบัญชีที่ใช้คอมเมนต์บนโพสต์กิจกรรม</p>
+      </div>
+      <div class="fg">
+        <label class="flbl" for="f-phone">เบอร์โทรศัพท์ *</label>
+        <input class="finput" type="tel" id="f-phone" name="phone" autocomplete="tel" placeholder="+66 8X XXX XXXX" required inputmode="tel">
+        <p class="fhint">ใส่รหัสประเทศ (เช่น +66 สำหรับประเทศไทย)</p>
+      </div>
+      <div class="fg">
+        <label class="flbl" for="f-size">ไซส์เสื้อ *</label>
+        <select class="fselect" id="f-size" name="size" required>
+          <option value="" disabled selected>เลือกไซส์ของคุณ</option>
+          <option value="S">S</option><option value="M">M</option>
+          <option value="L">L</option><option value="XL">XL</option>
+        </select>
+        <p class="fhint">จำเป็นสำหรับการจัดส่งรางวัลประเภทเสื้อ</p>
+      </div>
+
+      <label class="consent-wrap" id="consent-wrap">
+        <input class="consent-chk" type="checkbox" id="f-consent" name="consent" required>
+        <span class="consent-text">
+          ฉันยืนยันว่าได้ติดตาม <em>@12BSports</em> และคอมเมนต์แท็กเพื่อนพร้อม <em>#12BSports</em> บนโพสต์ทางการแล้ว และยอมรับข้อกำหนดและนโยบายความเป็นส่วนตัว
+        </span>
+      </label>
+
+      <button type="submit" class="fsubmit" id="submit-btn">ส่งข้อมูลเข้าร่วม →</button>
+    </form>
+
+    <div class="form-success" id="form-success">
+      <div class="suc-icon">🏆</div>
+      <div class="suc-title">ลงทะเบียน<span>สำเร็จ!</span></div>
+      <p class="suc-desc">ได้รับข้อมูลของคุณแล้ว เราจะแจ้งผลทางอีเมลหากคุณได้รับรางวัล<br>ขอให้โชคดี! 🏁</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TERMS ═══ -->
+<section class="section terms-wrap reveal" style="padding-top:40px;padding-bottom:56px">
+  <button class="terms-btn" id="terms-btn" aria-expanded="false" aria-controls="terms-panel">
+    <span>ข้อกำหนดและเงื่อนไข</span>
+    <svg class="terms-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+  </button>
+  <div class="terms-panel" id="terms-panel" role="region">
+    <ol>
+      <li>กิจกรรมนี้เปิดรับผู้อาศัยในประเทศไทยที่มีอายุ 18 ปีขึ้นไปเท่านั้น</li>
+      <li>ผู้เข้าร่วมต้องมีบัญชี Instagram ที่ใช้งานได้และตั้งค่าเป็นสาธารณะ (Public)</li>
+      <li>ต้องทำครบทั้ง 3 ขั้นตอน ได้แก่ ติดตาม @12BSports, คอมเมนต์พร้อม #12BSports แท็กเพื่อนบนโพสต์ที่กำหนด และกรอกแบบฟอร์มลงทะเบียน</li>
+      <li>ลงทะเบียนได้ครั้งเดียวเท่านั้น รายการซ้ำจะถูกลบโดยอัตโนมัติ โดยเก็บรายการแรกไว้</li>
+      <li>ผู้โชคดีจะถูกเลือกโดยการจับสลากด้วยคอมพิวเตอร์หลังสิ้นสุดกิจกรรม</li>
+      <li>มาเลเซียและไทยแยกจับรางวัลอิสระต่อกัน</li>
+      <li>ผู้โชคดีจะถูกตรวจสอบ: คอมเมนต์ต้องมี #12BSports, แท็กเพื่อน, บัญชีต้องเป็นสาธารณะ, คอมเมนต์ต้องไม่ถูกลบ และต้องติดตาม @12BSports</li>
+      <li>ผู้โชคดีต้องตอบรับภายใน 48 ชั่วโมงหลังได้รับแจ้ง หากไม่ตอบรับจะถือว่าสละสิทธิ์และจับสลากใหม่</li>
+      <li>ของรางวัลไม่สามารถโอนสิทธิ์ ขายต่อ หรือแลกเป็นเงินสดได้</li>
+      <li>ผู้โชคดีจะถูกประกาศทาง Instagram @12BSports อย่างเป็นทางการ</li>
+      <li>การเข้าร่วม ถือว่ายินยอมให้ 12B Sports ใช้ชื่อและ username เพื่อการตลาด</li>
+      <li>12B Sports สงวนสิทธิ์ในการแก้ไขกติกาและมีอำนาจตัดสินสูงสุดในทุกเรื่อง</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="ft-logos">
+    <div class="logo-block"><span class="l12-num" style="font-size:22px">12B</span><span class="l12-word" style="font-size:10px">SPORTS</span></div>
+    <span class="lsep" style="font-size:18px">×</span>
+    <div class="logo-block"><span class="lvr-name" style="font-size:18px">VR46</span><span class="lvr-sub">Racing Team</span></div>
+  </div>
+  <p class="ft-tagline">UNITED BY PASSION · DRIVEN BY LEGACY</p>
+  <p class="ft-copy">
+    <strong>12B Sports × VR46 Official Giveaway</strong><br>
+    ผู้โชคดีจะถูกเลือกโดยการจับสลากหลังจากสิ้นสุดแคมเปญ<br>
+    ของรางวัลเป็นสินค้า VR46 อย่างเป็นทางการ ไม่สามารถแลกเป็นเงินสดได้<br>
+    ผู้เข้าร่วมต้องมีอายุ 18 ปีขึ้นไป เปิดรับเฉพาะผู้ที่อาศัยอยู่ในประเทศไทยเท่านั้น<br>
+    © 2025 12B Sports. All rights reserved.
+  </p>
+</footer>
+
+<!-- ═══ SCRIPT ═══ -->
+<script>
+/* TODO: Set CAMPAIGN_END before going live
+   e.g. new Date('2026-06-30T23:59:59+07:00') */
+const CAMPAIGN_END = null;
+
+(function initCD() {
+  const cdw = document.getElementById('cdw');
+  const tbd = document.getElementById('cd-tbd');
+  if (!CAMPAIGN_END) { cdw.style.display='none'; tbd.style.display='block'; return; }
+  const pad = n => String(n).padStart(2,'0');
+  function tick() {
+    const diff = CAMPAIGN_END - Date.now();
+    if (diff<=0){ cdw.style.display='none'; tbd.textContent='สิ้นสุดกิจกรรมแล้ว'; tbd.style.display='block'; return; }
+    document.getElementById('cd-d').textContent=pad(Math.floor(diff/86400000));
+    document.getElementById('cd-h').textContent=pad(Math.floor((diff%86400000)/3600000));
+    document.getElementById('cd-m').textContent=pad(Math.floor((diff%3600000)/60000));
+    document.getElementById('cd-s').textContent=pad(Math.floor((diff%60000)/1000));
+  }
+  tick(); setInterval(tick,1000);
+})();
+
+const tBtn=document.getElementById('terms-btn'), tPane=document.getElementById('terms-panel');
+tBtn.addEventListener('click',()=>{ const o=tBtn.getAttribute('aria-expanded')==='true'; tBtn.setAttribute('aria-expanded',String(!o)); tPane.style.display=o?'none':'block'; });
+
+document.getElementById('copy-btn').addEventListener('click',function(){
+  navigator.clipboard.writeText(`มาร่วมลุ้นของรางวัล @12BSports × VR46 กันเลย! 🏁 [แท็กเพื่อน] #12BSports`)
+    .then(()=>{ this.classList.add('copied'); document.getElementById('copy-label').textContent='คัดลอกแล้ว!'; setTimeout(()=>{ this.classList.remove('copied'); document.getElementById('copy-label').textContent='คัดลอก'; },2000); }).catch(()=>{});
+});
+
+const ro=new IntersectionObserver(entries=>entries.forEach(e=>{ if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);} }),{threshold:.10});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+const form=document.getElementById('the-form'), succ=document.getElementById('form-success'), sbtn=document.getElementById('submit-btn');
+form.addEventListener('submit',e=>{
+  e.preventDefault(); let valid=true;
+  form.querySelectorAll('[required]').forEach(el=>{
+    el.classList.remove('err');
+    if(el.type==='checkbox'){ const w=document.getElementById('consent-wrap'); if(!el.checked){w.classList.add('err');valid=false;}else w.classList.remove('err'); return; }
+    const v=el.value.trim();
+    if(!v){el.classList.add('err');valid=false;return;}
+    if(el.type==='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){el.classList.add('err');valid=false;}
+  });
+  if(!valid){ const f=form.querySelector('.err'); if(f)f.scrollIntoView({behavior:'smooth',block:'center'}); return; }
+  sbtn.disabled=true; sbtn.textContent='...';
+  setTimeout(()=>{ form.style.display='none'; succ.style.display='block'; succ.scrollIntoView({behavior:'smooth',block:'center'}); },900);
+});
+form.querySelectorAll('.finput,.fselect').forEach(el=>el.addEventListener('input',()=>el.classList.remove('err')));
+</script>
+</body>
+</html>
