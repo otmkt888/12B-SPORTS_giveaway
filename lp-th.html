@@ -645,7 +645,7 @@ form.addEventListener('submit',e=>{
   });
   if(!valid){ const f=form.querySelector('.err'); if(f)f.scrollIntoView({behavior:'smooth',block:'center'}); return; }
   sbtn.disabled=true; sbtn.textContent='กำลังส่ง...';
-  const SHEET_URL = 'YOUR_APPS_SCRIPT_URL_HERE'; // ← Paste your Web App URL
+  const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxIdJoylKcPC76vhCru7xjPzW-PjWLhvuxTpW6NVoDH_rriQtL0LT2CV6V4C7vRjoKL/exec';
   const payload = new URLSearchParams({
     country:   form.querySelector('[name="country"]').value,
     email:     form.querySelector('[name="email"]').value.trim(),
