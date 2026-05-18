@@ -315,8 +315,10 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   transition:transform .4s;
 }
 /* small accessories — contain so the product doesn't get cropped to nothing */
-.pz-card.rank-4 .pz-img{background:#fff;padding:16px}
+.pz-card.rank-4{grid-column:1/-1;display:flex;flex-direction:row;align-items:stretch}
+.pz-card.rank-4 .pz-img{width:140px;flex-shrink:0;aspect-ratio:unset;background:#fff;padding:16px}
 .pz-card.rank-4 .pz-img img{object-fit:contain}
+.pz-card.rank-4 .pz-body{display:flex;flex-direction:column;justify-content:center;padding:16px 18px}
 .pz-card:hover .pz-img img{transform:scale(1.04)}
 
 .pz-body{
