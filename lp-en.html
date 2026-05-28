@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#0A0A0A">
-<meta name="description" content="12B Sports × VR46 Official Giveaway — Win exclusive VR46 Racing Team merchandise. 21 winners total.">
-<title>12B Sports × VR46 Official Giveaway</title>
+<meta name="description" content="12B Sports × VR46 Racing Team Official Giveaway — Win exclusive VR46 Racing Team merchandise. 21 winners total.">
+<title>12B Sports × VR46 Racing Team Official Giveaway</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,700;0,900;1,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -97,16 +97,24 @@ button{cursor:pointer;font-family:inherit;border:none;background:none}
   z-index:2;
 }
 .hero-inner{position:relative;z-index:1;max-width:500px;width:100%}
-.hero-video{
+.hero-bg{
   position:absolute;inset:0;width:100%;height:100%;
-  object-fit:contain;z-index:0;
-  opacity:.8;
-  mix-blend-mode:screen;
+  object-fit:contain;object-position:center bottom;z-index:0;
+  opacity:.65;
   pointer-events:none;
-  /* subtle bottom fade so video dissolves into the section below */
-  -webkit-mask-image:linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
-  mask-image:linear-gradient(to bottom, black 0%, black 70%, transparent 100%);
+  -webkit-mask-image:linear-gradient(to bottom, transparent 0%, black 20%, black 85%, transparent 100%);
+  mask-image:linear-gradient(to bottom, transparent 0%, black 20%, black 85%, transparent 100%);
 }
+@media(min-width:600px){
+  .hero-bg{object-fit:cover;object-position:center;
+    -webkit-mask-image:linear-gradient(to bottom, black 0%, black 65%, transparent 100%);
+    mask-image:linear-gradient(to bottom, black 0%, black 65%, transparent 100%);
+  }
+}
+.hdr-vr46-logo{height:36px;width:auto;object-fit:contain;display:block}
+.lockup-vr46-img{height:clamp(54px,13vw,86px);width:auto;object-fit:contain;display:block}
+.ft-vr46-logo{height:40px;width:auto;object-fit:contain;display:block}
+.ft-12b-logo{height:40px;width:auto;object-fit:contain;display:block}
 
 /* Sponsor tag */
 .sponsor-tag{
@@ -497,6 +505,14 @@ footer{
 .cd-pulse{animation:cdPulse 2.5s ease-in-out infinite}
 
 /* ─── RESPONSIVE ─────────────────────────────────── */
+@media(max-width:599px){
+  .hero{
+    min-height:auto;
+    justify-content:flex-start;
+    padding-top:28px;
+    padding-bottom:200px; /* leave room for bikes at bottom */
+  }
+}
 @media(min-width:420px){.pz-grid{gap:14px}}
 @media(min-width:540px){
   .pz-grid{grid-template-columns:repeat(3,1fr)}
@@ -513,15 +529,12 @@ footer{
   <div class="hdr-divider"></div>
   <span class="lsep">×</span>
   <div class="hdr-divider"></div>
-  <div class="logo-block">
-    <span class="lvr-name">VR46</span>
-    <span class="lvr-sub">Racing Team</span>
-  </div>
+  <img src="VR46_logo.jpg" class="hdr-vr46-logo" alt="VR46 Racing Team">
 </header>
 
 <!-- ═══ HERO ═══ -->
 <section class="hero">
-  <video class="hero-video" src="new visual.mp4" autoplay muted loop playsinline preload="auto"></video>
+  <img class="hero-bg" src="Background.jpg" alt="">
   <div class="hero-glow"></div>
   <div class="hero-watermark">46</div>
   <div class="hero-accent"></div>
@@ -537,10 +550,7 @@ footer{
     <div class="hero-lockup">
       <img src="12B_Sports_logo.png" class="logo-12b-img" alt="12B Sports">
       <span class="lockup-x">×</span>
-      <div class="lockup-vr46">
-        <span class="lockup-vr46-name">VR46</span>
-        <span class="lockup-vr46-sub">Racing Team</span>
-      </div>
+      <img src="VR46_logo.jpg" class="lockup-vr46-img" alt="VR46 Racing Team">
     </div>
 
     <h1 class="hero-headline">OFFICIAL <span>GIVEAWAY</span></h1>
@@ -560,15 +570,15 @@ footer{
         ENTER THE DRAW
         <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3.75 9H14.25M10.5 5.25L14.25 9L10.5 12.75" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <a href="https://instagram.com/12bsports" target="_blank" rel="noopener" class="btn-outline-w" id="go-to-post">
+      <a href="https://www.instagram.com/12bsports_official/" target="_blank" rel="noopener" class="btn-outline-w" id="go-to-post">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
-        GO TO POST ↗
+        @12bsports_official ↗
       </a>
     </div>
 
     <p class="date-row">
       <span>Campaign period:</span>
-      <span class="date-pill">25 May — 8 Jun 2026</span>
+      <span class="date-pill">29 May — 21 Jun 2026</span>
     </p>
 
   </div>
@@ -601,7 +611,7 @@ footer{
 <!-- ═══ PRIZES (white section) ═══ -->
 <section class="section sec-white" id="prizes">
   <p class="eyebrow eyebrow-dark reveal">Prizes</p>
-  <h2 class="sec-heading reveal d1">WIN THESE <span class="r">VR46</span> <span class="y" style="color:var(--black)">PRIZES</span></h2>
+  <h2 class="sec-heading reveal d1">WIN THESE <span class="r">VR46 Racing Team</span> <span class="y" style="color:var(--black)">PRIZES</span></h2>
   <p class="sec-desc on-white reveal d2">10 lucky winners will receive official VR46 Racing Team merchandise.</p>
 
   <div class="pz-grid">
@@ -692,11 +702,11 @@ footer{
       </div>
       <div class="step-body">
         <p class="step-num-tag">Step 01</p>
-        <p class="step-title">Follow @12BSports on Instagram</p>
-        <p class="step-desc">Follow the official account <strong>@12BSports</strong> and ensure your account is set to <strong>Public</strong>.</p>
-        <a href="https://instagram.com/12bsports" target="_blank" rel="noopener" class="ig-link-btn">
+        <p class="step-title">Follow @12bsports_official on Instagram</p>
+        <p class="step-desc">Follow the official account <strong>@12bsports_official</strong> and ensure your account is set to <strong>Public</strong>.</p>
+        <a href="https://www.instagram.com/12bsports_official/" target="_blank" rel="noopener" class="ig-link-btn">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
-          Follow @12BSports
+          Follow @12bsports_official
         </a>
       </div>
     </div>
@@ -712,14 +722,14 @@ footer{
         <div class="comment-tmpl">
           <p class="tmpl-label">Copy this comment template</p>
           <p class="tmpl-text">
-            "Joining the <span class="at">@12BSports</span> × VR46 giveaway! 🏁 Come join me [tag friend] <span class="ht">#12BSports</span>"
+            "Joining the <span class="at">@12bsports_official</span> × VR46 Racing Team giveaway! 🏁 Come join me [tag friend] <span class="ht">#12BSports</span>"
           </p>
           <button class="copy-btn" id="copy-btn" type="button">
             <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="5" width="9" height="9" rx="1.5"/><path d="M3 11H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v1"/></svg>
             <span id="copy-label">Copy</span>
           </button>
         </div>
-        <a href="https://instagram.com/12bsports" target="_blank" rel="noopener" class="ig-link-btn">
+        <a href="https://www.instagram.com/12bsports_official/" target="_blank" rel="noopener" class="ig-link-btn">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
           Go to Post ↗
         </a>
@@ -745,7 +755,7 @@ footer{
 <section class="section form-section" id="entry-form">
   <p class="eyebrow eyebrow-dark reveal">Entry Form</p>
   <h2 class="sec-heading reveal d1">ENTER THE <span class="r">DRAW</span></h2>
-  <p class="sec-desc on-white reveal d2">Winners announced on <strong>@12BSports</strong> Instagram after the campaign ends.</p>
+  <p class="sec-desc on-white reveal d2">Winners announced on <strong>@12bsports_official</strong> Instagram after the campaign ends.</p>
 
   <div class="form-card reveal d3">
     <form id="the-form" novalidate>
@@ -787,7 +797,7 @@ footer{
       <label class="consent-wrap" id="consent-wrap">
         <input class="consent-chk" type="checkbox" id="f-consent" name="consent" required>
         <span class="consent-text">
-          I confirm I have followed <em>@12BSports</em> and left a comment with <em>#12BSports</em> tagging a friend on the official post. I agree to the contest terms and privacy policy.
+          I confirm I have followed <em>@12bsports_official</em> and left a comment with <em>#12BSports</em> tagging a friend on the official post. I agree to the contest terms and privacy policy.
         </span>
       </label>
 
@@ -812,13 +822,13 @@ footer{
     <ol>
       <li>This giveaway is open to participants aged 18 and above.</li>
       <li>Participants must hold a valid, public Instagram account.</li>
-      <li>To be eligible, all 3 steps must be completed: follow @12BSports, comment with #12BSports tagging at least 1 friend on the official post, and submit the entry form.</li>
+      <li>To be eligible, all 3 steps must be completed: follow @12bsports_official, comment with #12BSports tagging at least 1 friend on the official post, and submit the entry form.</li>
       <li>Each person may enter once only. Duplicates are removed automatically, retaining the earliest submission.</li>
       <li>Winners are selected by random computer draw after the campaign ends.</li>
-      <li>Winners will be verified: comment must include #12BSports, tag a friend, be from a public account, be undeleted, and the account must follow @12BSports.</li>
+      <li>Winners will be verified: comment must include #12BSports, tag a friend, be from a public account, be undeleted, and the account must follow @12bsports_official.</li>
       <li>Winners must respond within 48 hours of notification. Failure to respond forfeits the prize and a redraw is conducted.</li>
       <li>Prizes are non-transferable, non-resaleable, and cannot be exchanged for cash.</li>
-      <li>Winners will be announced on @12BSports official Instagram.</li>
+      <li>Winners will be announced on @12bsports_official official Instagram.</li>
       <li>By entering, participants consent to 12B Sports using their name and username for promotional purposes.</li>
       <li>12B Sports reserves the right to amend the rules, disqualify fraudulent entries, and make final decisions on all matters.</li>
     </ol>
@@ -828,21 +838,15 @@ footer{
 <!-- ═══ FOOTER ═══ -->
 <footer>
   <div class="ft-logos">
-    <div class="logo-block">
-      <span class="l12-num" style="font-size:22px">12B</span>
-      <span class="l12-word" style="font-size:10px">SPORTS</span>
-    </div>
+    <img src="12B_Sports_logo.png" class="ft-12b-logo" alt="12B Sports">
     <span class="lsep" style="font-size:18px">×</span>
-    <div class="logo-block">
-      <span class="lvr-name" style="font-size:18px">VR46</span>
-      <span class="lvr-sub">Racing Team</span>
-    </div>
+    <img src="VR46_logo.jpg" class="ft-vr46-logo" alt="VR46 Racing Team">
   </div>
   <p class="ft-tagline">UNITED BY PASSION · DRIVEN BY LEGACY</p>
   <p class="ft-copy">
-    <strong>12B Sports × VR46 Official Giveaway</strong><br>
+    <strong>12B Sports × VR46 Racing Team Official Giveaway</strong><br>
     Winners selected by random draw after the campaign ends.<br>
-    Prizes are official VR46 merchandise. No cash alternative.<br>
+    Prizes are official VR46 Racing Team merchandise. No cash alternative.<br>
     Open to participants aged 18 and above.<br>
     © 2025 12B Sports. All rights reserved.
   </p>
@@ -854,7 +858,7 @@ footer{
    TODO: Set CAMPAIGN_END before going live
    e.g. new Date('2026-06-30T23:59:59+08:00')
 ─────────────────────────────────────────────────── */
-const CAMPAIGN_END = new Date('2026-06-08T23:59:59+08:00');
+const CAMPAIGN_END = new Date('2026-06-21T23:59:59+08:00');
 
 (function initCD() {
   const cdw = document.getElementById('cdw');
@@ -883,7 +887,7 @@ tBtn.addEventListener('click', () => {
 
 /* ── Copy template ────────────────────────────────── */
 document.getElementById('copy-btn').addEventListener('click', function() {
-  navigator.clipboard.writeText(`Joining the @12BSports × VR46 giveaway! 🏁 Come join me [tag friend] #12BSports`)
+  navigator.clipboard.writeText(`Joining the @12bsports_official × VR46 Racing Team giveaway! 🏁 Come join me [tag friend] #12BSports`)
     .then(() => {
       this.classList.add('copied');
       document.getElementById('copy-label').textContent = 'Copied!';
